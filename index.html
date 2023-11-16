@@ -1372,3 +1372,401 @@ if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
 }
 </script></body>
 </html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apple's Smartphones Appeal Among Singaporean Students</title>
+    <!-- Add your CSS file link here -->
+    <style>
+        /* Existing CSS styles here */
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #000000; /* Dark background */
+            color: #ffffff; /* Light text color for readability */
+            margin: -30;
+            padding: 0;
+        }
+        .header { 
+            text-align: center; 
+            margin: 50px;
+        }
+        .section { 
+            margin: 40px; 
+        }
+        .footer { 
+            text-align: center; 
+            margin-top: 30px; 
+        }
+        .student-info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #ffff00; /* Yellow text color */
+            margin-bottom: 30px; /* Increased spacing to the content below */
+        }
+        .content {
+            margin-top: 100px; /* Adjust this value to increase spacing */
+        }
+        .rounded-rectangle {
+            background-color: #ffffe0; /* Light yellow background */
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px;
+            font-size: larger; /* Larger font size */
+            margin: 20px;
+        }
+        .vertical-nav {
+            position: fixed;
+            top: 7cm; /* Position 5cm below the top */
+            left: 0;
+            width: 230px; /* Adjust the width as needed */
+            background-color: #f0f0f0; /* Light grey background */
+            padding: 20px;
+            box-sizing: border-box;
+            height: 65%;
+            border-radius: 15px;
+        }
+
+        .vertical-nav a {
+            display: block;
+            /*color: #ff00ff; /* Colorful text color (example) */
+            padding: 20px; /* Increased padding to double the spacing */
+            font-size: larger;
+            text-decoration: none;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            animation: flashing 2s infinite;
+        }
+
+        .vertical-nav a:hover {
+            background-color: #ddd;
+        }
+
+        .main-content {
+            margin-left: 220px; /* Adjust this value as needed */
+            padding: 20px;
+        }
+        .row {
+    display: flex;
+    margin: 50px;
+    }
+
+    .column {
+    flex: 50%; /* Each column takes up 50% of the row's width */
+    padding: 10px; /* Adjust the padding as needed */
+    box-sizing: border-box;
+    }
+
+    .column img {
+    width: 100%; /* Makes the image responsive */
+    height: auto;
+    }
+    
+    .column img {
+        width: 300px;
+        height: 300px;
+    }
+    .video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-gap: 20px; /* Space between grid items */
+    margin-bottom: 20px;
+}
+
+.video-container {
+    text-align: center;
+}
+
+.video-container video {
+    width: 300px;
+    height: 300px;
+}
+.message {
+    background-color: rgb(209, 209, 114);
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.message p {
+    margin: 0;
+    color: purple; /* Set the font color to purple */
+}
+
+#messageInput {
+    width: 100%;
+    margin-bottom: 10px;
+  
+}
+.star {
+    cursor: pointer;
+    font-size: 24px;
+    color: grey;
+}
+
+.star:hover {
+    color: gold;
+}
+
+#DataAnalysis a {
+        font-size: larger; /* Increases the font size of the links */
+    }
+
+    </style>
+</head>
+<body>
+
+    <div class="student-info">
+      
+        <p>Student’s Name: XXXX XXXXX XXXX</p>
+        <p>CMNS3333 T3 2023 Tutorial A</p>
+        <p>Student ID:  XXXXXX</p>
+    </div>
+
+
+<div class="header">
+    <h1>Interview Story Report</h1>
+    <h2 >Unveiling the Appeal of Apple's Latest Smartphones Among Singaporean Students</h2>
+    <!-- Navigation bar can be added here -->
+</div>
+<hr> <!-- Horizontal Line -->
+    
+     <!-- Vertical navigation bar -->
+     <div class="vertical-nav">
+        <a href="#introduction">Theme</a>
+        <a href="#interviewees_questions">Interview Questions</a>
+        <a href="#interviewees">Interview Response</a>
+        <a href="#purpose">Interview Video</a>
+        <a href="#DataAnalysis">Apple Products</a>
+        <a href="#MessageBoards">Message Boards </a>
+        <a href="#Reviews">Reviews</a>
+        
+    </div>
+<div class="main-content"> 
+<div class="section" id="introduction">
+    <!--<h3>Central Theme</h3>-->
+    <div class="rounded-rectangle">
+        <p style="color: #000000; font-size: larger; font-size: 120%; font-family: 'Arial', sans-serif; line-height: 200%;">
+            The focal point of our interview series is a comprehensive exploration of the motivations, preferences, and influential factors that shape the decisions of Singaporean students when it comes to purchasing and recommending Apple's new smartphones. This approach aims to establish a relatable connection with viewers and potential consumers by delving into real sentiments and choices.
+        </p>
+            </div>
+        <!-- Insert image tags here -->
+</div>
+<div class="section" id="interviewees_questions">
+    <h3>Interviewee Questions</h3>
+    <div id="question-pool">
+        <p id="current-question">Click the button to see the questions.</p>
+        <button onclick="showNextQuestion()">Next Question</button>
+    </div>
+</div>
+
+<div class="section" id="interviewees">
+    <h3>Interviewee Response</h3>
+    
+    <div class="row">
+        <div class="column">
+            <img src="images/three.jpg" alt="Description of Image 3">
+            <p>Interviewer Name: LiSA</p>
+            <p>Location: </p>
+            <p>Interview Question: </p>
+            <p>Interview Response: </p>
+        </div>
+        <div class="column">
+            <img src="images/three.jpg" alt="Description of Image 3">
+            <p>Interviewer Name: LiSA</p>
+            <p>Location: </p>
+            <p>Interview Question: </p>
+            <p>Interview Response: </p>
+        </div>
+        <div class="column">
+            <img src="images/three.jpg" alt="Description of Image 3">
+            <p>Interviewer Name: LiSA</p>
+            <p>Location: </p>
+            <p>Interview Question: </p>
+            <p>Interview Response: </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <img src="images/three.jpg" alt="Description of Image 3">
+            <p>Interviewer Name: LiSA</p>
+            <p>Location: </p>
+            <p>Interview Question: </p>
+            <p>Interview Response: </p>
+        </div>
+        <div class="column">
+            <img src="images/three.jpg" alt="Description of Image 3">
+            <p>Interviewer Name: LiSA</p>
+            <p>Location: </p>
+            <p>Interview Question: </p>
+            <p>Interview Response: </p>
+        </div>
+        <div class="column">
+            <img src="images/three.jpg" alt="Description of Image 3">
+            <p>Interviewer Name: LiSA</p>
+            <p>Location: </p>
+            <p>Interview Question: </p>
+            <p>Interview Response: </p>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="purpose">
+    <h3>Interview Vedio</h3>
+    <div class="video-grid">
+        <!-- Video 1 -->
+        <div class="video-container">
+            <video width="500" height="500" controls>
+                <source src="images/TAOTAO.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Video 1 Description</p>
+        </div>
+        <!-- Repeat for other videos -->
+        <!-- Video 1 -->
+        <div class="video-container">
+            <video width="500" height="500" controls>
+                <source src="https://tbm-auth.alicdn.com/f2ed2eb4a20aac07/PujLmBZmXVDwKcxhQ5o/2TbUSBCxxUjHDFJ0fuS_348852133287_mp4_264_hd_taobao.mp4?auth_key=1700138042-0-0-efffb631a5def8c5c3cb67c90ec1cb3d&biz=video_plus-c0a010da0a9e6b96&t=215047fe17001353420414298e0d39&b=video_plus&p=cloudvideo_http_seller_sucai_vod_publish" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Video 1 Description</p>
+        </div>
+        <!-- Video 1 -->
+        <div class="video-container">
+            <video width="500" height="500" controls>
+                <source src="images/TAOTAO.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Video 1 Description</p>
+        </div>
+        <!-- Video 1 -->
+        <div class="video-container">
+            <video width="500" height="500" controls>
+                <source src="images/TAOTAO.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Video 1 Description</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="section" id="DataAnalysis">
+    <h3>Apple Products</h3>
+    <p>
+        <a href="https://gadgetsleo.com/product/iphone-15-pro-max/?utm_source=Google%20Shopping&utm_campaign=Google%20Shopping%20Ads&utm_medium=cpc&utm_term=28050&gclid=Cj0KCQjw1aOpBhCOARIsACXYv-cOQUhQqhNIpH1eIF40UlNknZ1mbqrUjV5XzDay2ihvP6C2zR7fEnkaAtX6EALw_wcB" target="_blank">iPhone 15 Pro Max on GadgetsLeo</a>
+    </p>
+    <p>
+        <a href="https://phoneporium.shop/products/iphone-15-pro-max-the-best-of-apple-innovations?variant=47048177451281&utm_source=google&utm_medium=cpc&utm_campaign=Google+Shopping&currency=KES&gclid=Cj0KCQjw1aOpBhCOARIsACXYv-fgbxnRn4wV9IfjwP--w0bb2Q9P5S5Mjj5FjsT9PoN9fy1h2_uwNgwaAl-aEALw_wcB" target="_blank">iPhone 15 Pro Max on Phoneporium</a>
+
+    </p>
+    <p>
+        <a href="https://www.apple.com/ipad-pro/">iPad Pro Supercharged by Supercharged by M2</a>
+    </p>
+    <p>
+        <a href="https://www.apple.com/iphone-15-pro/">Apple 15 Pro News!</a>
+    </p>
+    <p>
+        <a href="https://www.apple.com/apple-watch-series-9/">Apple Watch 9</a>
+    </p>
+    <p>
+        <a href="https://www.apple.com/macbook-pro/">Apple Mac Pro</a>
+    </p>
+    <!-- Add more links here if necessary -->
+</div>
+
+
+<div class="section" id="MessageBoards">
+    <h3>Message Boards</h3>
+    <textarea id="messageInput" placeholder="Type your message here..."></textarea>
+    <button onclick="submitMessage()">Submit</button>
+    <div id="messageArea"></div>
+</div>
+
+
+<div class="section" id="Reviews">
+    <h3>Reviews</h3>
+    <div id="star-rating">
+        <span class="star" onclick="rate(1)">&#9733;</span>
+        <span class="star" onclick="rate(2)">&#9733;</span>
+        <span class="star" onclick="rate(3)">&#9733;</span>
+        <span class="star" onclick="rate(4)">&#9733;</span>
+        <span class="star" onclick="rate(5)">&#9733;</span>
+    </div>
+    <p>Click Count: <span id="click-count">0</span></p>
+</div>
+
+
+<div class="section" id="References">
+  
+    <p><!-- Preparation tips and video module --></p>
+</div>
+
+ 
+
+<div class="footer">
+    <p>Contact Information and Social Media Links</p>
+</div>
+</div>
+<script>
+    let questions = [
+        "What's your initial impression of Apple's most recent smartphone releases? ",
+        "To what extent does brand loyalty influence your choice when purchasing a smartphone?",
+        "Rank the following factors in order of importance when choosing a smartphone: price, innovative features, and brand loyalty.",
+        "Would you actively endorse the latest Apple smartphones to your peers, and if so, what drives this endorsement? ",
+        "How do the opinions of the tech community and your friends influence your smartphone preferences? "
+    ];
+    let currentQuestionIndex = 0;
+
+    function showNextQuestion() {
+        if (currentQuestionIndex < questions.length) {
+            document.getElementById("current-question").innerText = questions[currentQuestionIndex];
+            currentQuestionIndex++;
+            document.getElementById("current-question").style.color = "red"; // Optional: Change color when done
+        } else {
+            document.getElementById("current-question").innerText = "That's all the questions!";
+            document.getElementById("current-question").style.color = "green"; // Optional: Change color when done
+        }
+    }
+    function submitMessage() {
+        const messageInput = document.getElementById('messageInput');
+        const messageText = messageInput.value;
+        const currentTime = new Date().toLocaleString();
+
+        if (messageText.trim() === '') {
+            alert('Please enter a message');
+            return;
+        }
+
+        const messageDiv = document.createElement('div');
+        messageDiv.setAttribute('class', 'message');
+        
+        const messageContent = document.createElement('p');
+        messageContent.innerHTML = messageText + "<br><small>Posted on: " + currentTime + "</small>";
+
+        const deleteButton = document.createElement('button');
+        deleteButton.innerText = 'Delete';
+        deleteButton.onclick = function() { messageDiv.remove(); };
+
+        messageDiv.appendChild(messageContent);
+        messageDiv.appendChild(deleteButton);
+
+        document.getElementById('messageArea').appendChild(messageDiv);
+        messageInput.value = ''; // Clear the input field
+    }
+    let total = 0;
+
+    function rate(starNumber) {
+        total += starNumber; // Add the number of the star clicked to the total
+        document.getElementById('click-count').innerText = total;
+        updateStars(starNumber);
+    }
+
+    function updateStars(starNumber) {
+        const stars = document.querySelectorAll('#star-rating .star');
+        stars.forEach((star, index) => {
+        star.style.color = index < starNumber ? 'gold' : 'grey';
+        });
+    }
+</script>
+
+</body>
+</html>
