@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Store</title>
+<!-- Add this script tag to include Swiper.js -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<style>
+  body { font-family: Arial, sans-serif; }
+  .header { background-color: #f0f0f0; padding: 10px; text-align: center; }
+  .navigation { background-color: #ff0099; padding: 10px; text-align: left}
+  .navigation a { color: white; padding: 12px 20px; margin: 0 10px; } /* Adjust padding and margin for buttons */
+  .product-grid { display: flex; justify-content: space-around; padding: 200px; }
+  .product { text-align: center; margin: 20px; }
+  .product img { width: 100%; }
+  .product-price { color: #333; font-size: 24px; }
+  .footer { background-color: #f0f0f0; padding: 10px; text-align: center; }
+  h1 {
+    font-size: 40px; /* You can adjust the font size as needed */
+    color: white; /* Set font color to white */
+    display: inline-block; /* Ensures the <a> elements appear beside the <h1> */
+    margin-right: 20px; /* Adjust margin as needed */
+  }
+.navigation a {
+  color: white;
+  padding: 12px 20px;
+  margin: 0 50px; /* Increase the margin between navigation links */
+}
+.navigation img {
+  color: white;
+  padding: 12px 20px;
+  margin: 0 50px; /* Increase the margin between navigation links */
+}
+
+  .logo {
+    width: 50px; /* Set width to 20px */
+    height: 60px; /* Set height to 20px */
+    margin-top: 100px; /* Increase the distance from the elements above by 20px */
+
+  }
+.footer {
+  background-color:  #ff0099;
+  padding: 10px;
+margin-top: 100px;
+  text-align: center;
+  height: 200px; /* Set the height to 300px */
+ display: flex;
+
+    justify-content: center;
+    align-items: center;
+ 
+}
+.footer a {
+  color: white; /* 设置文字颜色为白色 */
+  margin: 0 100px; /* Set the horizontal margin to 100px */
+}
+ .product-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ padding: 20px; /* 调整整个产品网格的内边距 */
+  }
+
+  .product {
+    text-align: center;
+  margin: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+
+  .product img {
+    width: 250px; /* 调整图片宽度 */
+    height: 350px; /* 调整图片高度 */
+    border-radius: 10px; /* 可选：添加圆角效果 */
+  }
+
+  .product-price {
+       background-color: #3498db;
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  /* Add the following flex properties for centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto; /* Align .product-price to the right */
+  margin-right: auto; /* Align .product-price to the left */
+  }
+.swiper-container {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .swiper-slide {
+      text-align: center;
+    }
+
+    .product-description {
+      margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="navigation">
+  <!-- Navigation links would go here -->
+  <h1>CustomHer</h1>
+   
+</div>
+
+<!-- Add a container for Swiper -->
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <!-- Product 1 -->
+    <div class="swiper-slide">
+      <img src="mianyi1.jpg" alt="Cozy Sweater">
+      <div class="product-description">The black cotton-padded coat exudes a sense of timeless elegance, its sleek silhouette enveloping the wearer in warmth and sophistication.</div>
+      <div class="product-price">$99</div>
+      <!-- Shopping cart icon and add-to-cart functionality would be implemented here -->
+    </div>
+
+    <!-- Product 2 -->
+    <div class="swiper-slide">
+      <img src="mianyi2.jpg" alt="Product 2">
+      <div class="product-description">The medium-length brown cotton-padded coat embodies rustic charm and cozy sophistication. Crafted from soft, durable cotton fabric, it exudes a warm and earthy hue reminiscent of rich autumnal tones. </div>
+      <div class="product-price">$200</div>
+      <!-- Shopping cart icon and add-to-cart functionality would be implemented here -->
+    </div>
+
+   
+    <!-- Product 2 -->
+    <div class="swiper-slide">
+      <img src="shangyi1.jpg" alt="Product 2">
+      <div class="product-description">A white striped sweater is a stylish and versatile addition to any wardrobe. With its classic combination of crisp white and contrasting stripes, this sweater effortlessly exudes timeless elegance. </div>
+      <div class="product-price">$100</div>
+      <!-- Shopping cart icon and add-to-cart functionality would be implemented here -->
+    </div>
+    <!-- Product 2 -->
+    <div class="swiper-slide">
+      <img src="shangyi2.jpg" alt="Product 2">
+      <div class="product-description">
+        A red cable-knit sweater is a cozy and fashionable choice for cooler weather. The vibrant red color adds a pop of warmth and energy to any outfit, while the cable-knit pattern adds texture and visual interest. </div>
+      <div class="product-price">$500</div>
+      <!-- Shopping cart icon and add-to-cart functionality would be implemented here -->
+    </div>
+    <!-- Product 2 -->
+    <div class="swiper-slide">
+      <img src="shangyi3.jpg" alt="Product 2">
+      <div class="product-description">The 2024 new sweater with a "fortune" logo combines fashion with luck perfectly. Made from soft and comfortable wool or wool-blend fabric, this sweater provides warmth and coziness. Its unique feature lies in the eye-catching "fortune" logo, embroidered or printed in gold or other colors symbolizing wealth, positioned on the front or chest of the sweater. This design not only highlights fashion but also conveys a positive attitude and a sense of luck.</div>
+      <div class="product-price">$100</div>
+      <!-- Shopping cart icon and add-to-cart functionality would be implemented here -->
+    </div>
+
+    <!-- Product 2 -->
+    <div class="swiper-slide">
+      <img src="k2.jpg" alt="Product 2">
+      <div class="product-description">The white cashmere pants are a luxurious and versatile wardrobe staple, crafted from the finest cashmere wool to provide unparalleled softness and warmth. With a sleek and sophisticated design, these pants feature a tailored fit that accentuates the silhouette while ensuring comfort and freedom of movement. The pristine white color exudes elegance and sophistication, making these pants suitable for a variety of occasions, from casual outings to formal events.</div>
+      <div class="product-price">$90</div>
+      <!-- Shopping cart icon and add-to-cart functionality would be implemented here -->
+    </div>
+    <!-- Product 2 -->
+    <div class="swiper-slide">
+      <img src="k3.jpg" alt="Product 2">
+      <div class="product-description">The black pants with a heart-shaped logo are a charming and stylish addition to any wardrobe. Crafted from high-quality fabric, these pants offer both comfort and sophistication. The sleek black color provides a versatile base for any outfit, while the heart-shaped logo adds a touch of whimsy and personality.</div>
+      <div class="product-price">$99</div>
+      <!-- Shopping cart icon and add-to-cart functionality would be implemented here -->
+    </div>
+    <!-- Product 2 -->
+    <div class="swiper-slide">
+      <img src="mianyi3.jpg" alt="Product 2">
+      <div class="product-description">
+        A black fashionable down jacket combines practicality with style, making it a must-have for the colder seasons. Crafted from high-quality materials, this jacket offers both warmth and a sleek aesthetic. The deep black color adds a touch of sophistication, while the design elements elevate it to a fashion statement.</div>
+      <div class="product-price">$109</div>
+      <!-- Shopping cart icon and add-to-cart functionality would be implemented here -->
+    </div>
+
+    <!-- Product 2 -->
+    <div class="swiper-slide">
+      <img src="mianyi5.jpg" alt="Product 2">
+      <div class="product-description">
+        A long brown cashmere coat exudes timeless elegance and luxury, perfect for keeping warm during the colder months while maintaining a sophisticated style. Crafted from premium cashmere wool, this coat offers unparalleled softness and comfort.</div>
+      <div class="product-price">$210</div>
+      <!-- Shopping cart icon and add-to-cart functionality would be implemented here -->
+    </div>
+
+    <!-- Product 2 -->
+    <div class="swiper-slide">
+      <img src="mianyi6.jpg" alt="Product 2">
+      <div class="product-description">
+        A long white cashmere coat exudes timeless elegance and sophistication. Crafted from the finest cashmere wool, this coat offers luxurious softness and warmth. The pristine white color adds a touch of refinement to any outfit, making it a versatile piece for both casual and formal occasions.</div>
+      <div class="product-price">$89</div>
+      <!-- Shopping cart icon and add-to-cart functionality would be implemented here -->
+    </div>
+    <!-- Repeat the structure for the remaining six products -->
+
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- Add Navigation -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<div class="footer">
+  <a href="contact.html" target="_blank">Contact Page</a>
+  <a href="legal.html" target="_blank">Legal Page</a>
+  <a href="aboutus.html" target="_blank">About Us</a>
+</div>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
+</body>
+</html>

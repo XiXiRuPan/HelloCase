@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CustomHer Shopping Cart</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .header { background-color:  #ff0099; padding: 10px; }
+  .header h1 { color: #ffffff}
+  .cart-items { display: flex; flex-wrap: wrap; justify-content: space-around; padding: 10px; }
+  .cart-item { text-align: center; margin: 10px; }
+  .cart-item img { width: 100px; height: 150px; }
+  .payment-options { text-align: center; padding: 10px; }
+  .payment-logo { width: 50px; height: 30px; margin: 5px; }
+  .quantity-control { display: flex; align-items: center; }
+  .quantity-control button { padding: 5px; margin: 0 5px; }
+.footer {
+  background-color:  #ff0099;
+  padding: 10px;
+margin-top: 100px;
+  text-align: center;
+  height: 200px; /* Set the height to 300px */
+ display: flex;
+
+    justify-content: center;
+    align-items: center;
+ 
+}
+.payment-logo {
+  width: 500px; /* Set the width to 500 pixels */
+  height: 300px; /* Set the height to 300 pixels */
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>CustomHer Shopping Cart</h1>
+</div>
+
+<div class="cart-items">
+  <!-- Cart Item 1 -->
+  <div class="cart-item">
+    <img src="sw1.jpg" alt="Cozy Sweater">
+    <div class="quantity-control">
+      <button onclick="decrementQuantity(1)">-</button>
+      <span id="quantity1">2</span>
+      <button onclick="incrementQuantity(1)">+</button>
+    </div>
+  </div>
+
+  <!-- Cart Item 2 -->
+  <div class="cart-item">
+    <img src="sw2.jpg" alt="Elegant Dress">
+    <div class="quantity-control">
+      <button onclick="decrementQuantity(2)">-</button>
+      <span id="quantity2">1</span>
+      <button onclick="incrementQuantity(2)">+</button>
+    </div>
+  </div>
+
+  <!-- Cart Item 3 -->
+  <div class="cart-item">
+    <img src="sw3.jpg" alt="Casual Shirt">
+    <div class="quantity-control">
+      <button onclick="decrementQuantity(3)">-</button>
+      <span id="quantity3">1</span>
+      <button onclick="incrementQuantity(3)">+</button>
+    </div>
+  </div>
+</div>
+
+<div class="payment-options">
+  <!-- Payment Logos would go here 
+  <img src="paypal_logo.png" alt="PayPal" class="payment-logo">
+  <img src="visa_logo.png" alt="Visa" class="payment-logo">
+  <img src="mastercard_logo.png" alt="MasterCard" class="payment-logo">-->
+ <img src="pay.png" alt="Visa" class="payment-logo">
+  <!-- Other payment logos... -->
+</div>
+
+<div class="footer">
+  <!-- Footer content -->
+</div>
+
+<script>
+// JavaScript functions to handle quantity changes
+function incrementQuantity(itemNumber) {
+  var quantityElement = document.getElementById('quantity' + itemNumber);
+  var currentQuantity = parseInt(quantityElement.innerText);
+  quantityElement.innerText = currentQuantity + 1;
+}
+
+function decrementQuantity(itemNumber) {
+  var quantityElement = document.getElementById('quantity' + itemNumber);
+  var currentQuantity = parseInt(quantityElement.innerText);
+  if (currentQuantity > 0) {
+    quantityElement.innerText = currentQuantity - 1;
+  }
+}
+</script>
+
+</body>
+</html>

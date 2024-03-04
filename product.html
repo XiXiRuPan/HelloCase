@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Store</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .header { background-color: #f0f0f0; padding: 10px; }
+    .navigation { background-color: #ff0099; padding: 10px; }
+    .navigation a { color: white; padding: 12px 20px; margin: 0 10px; }
+
+    .footer { background-color: #f0f0f0; padding: 10px; text-align: center; }
+    h1 { font-size: 40px; color: white; margin-right: 20px; margin-left: 20px; }
+    .navigation a { color: white; padding: 12px 20px; margin: 0 50px; }
+    .navigation img { color: white; padding: 12px 20px; margin: 0 50px; }
+
+    .logo { width: 50px; height: 60px; margin-top: 100px; }
+
+    .footer { background-color: #ff0099; padding: 10px; margin-top: 100px; text-align: center;
+      height: 200px; display: flex; justify-content: center; align-items: center; }
+    .footer a { color: white; margin: 0 100px; }
+    .product-grid { justify-content: space-between; align-items: center; padding: 20px; }
+
+    .product {
+  text-align: center;
+  margin: 10px 20px;
+  position: relative; /* Add position relative */
+}
+
+.product img {
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column; /* Display the price and description in a column */
+  align-items: center; /* Center the items horizontally */
+}
+
+.product-price {
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+
+.product-description {
+  margin-top: 10px; /* Add margin for spacing */
+  text-align: left; /* Align description text to the left */
+}
+.product-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.product {
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  flex: 0 0 calc(50% - 20px); /* Set flex basis to 50% with margin included */
+}
+
+.product img {
+  width: 100%; /* Adjusted to take the full width of the container */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 10px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-price {
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+
+.product-description {
+  margin-top: 10px;
+  text-align: left;
+}
+
+    p { margin: 50px; line-height: 1.6; font-size: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="navigation">
+    <h1>CustomHer</h1>
+  </div>
+
+  <div class="product-grid">
+    <!-- Product 1 -->
+    <div class="product">
+      <img src="sw1.jpg" alt="Product Image">
+      <div class="product-info">
+        <div class="product-price">￥200</div>
+        <div class="product-description">Product Description</div>
+      </div>
+    </div>
+
+    <!-- Repeat the structure for additional products -->
+ <div class="product">
+      <img src="sw1.jpg" alt="Product Image">
+      <div class="product-info">
+        <div class="product-price">￥200</div>
+        <div class="product-description">Product Description</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Store</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .header { background-color: #f0f0f0; padding: 10px; text-align: center; }
+  .navigation { background-color: #ff0099; padding: 10px; text-align: left}
+  .navigation a { color: white; padding: 12px 20px; margin: 0 10px; } /* Adjust padding and margin for buttons */
+  .product-grid { display: flex; justify-content: space-around; padding: 200px; }
+  .product { text-align: center; margin: 20px; }
+  .product img { width: 100%; }
+  .product-price { color: #333; font-size: 24px; }
+  .footer { background-color: #f0f0f0; padding: 10px; text-align: center; }
+  h1 {
+    font-size: 40px; /* You can adjust the font size as needed */
+    color: white; /* Set font color to white */
+    display: inline-block; /* Ensures the <a> elements appear beside the <h1> */
+    margin-right: 20px; /* Adjust margin as needed */
+  }
+.navigation a {
+  color: white;
+  padding: 12px 20px;
+  margin: 0 50px; /* Increase the margin between navigation links */
+}
+.navigation img {
+  color: white;
+  padding: 12px 20px;
+  margin: 0 50px; /* Increase the margin between navigation links */
+}
+
+  .logo {
+    width: 50px; /* Set width to 20px */
+    height: 60px; /* Set height to 20px */
+    margin-top: 100px; /* Increase the distance from the elements above by 20px */
+
+  }
+.footer {
+  background-color:  #ff0099;
+  padding: 10px;
+margin-top: 100px;
+  text-align: center;
+  height: 200px; /* Set the height to 300px */
+ display: flex;
+
+    justify-content: center;
+    align-items: center;
+ 
+}
+.footer a {
+  color: white; /* 设置文字颜色为白色 */
+  margin: 0 100px; /* Set the horizontal margin to 100px */
+}
+ .product-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ padding: 20px; /* 调整整个产品网格的内边距 */
+  }
+
+  .product {
+    text-align: center;
+    
+      margin: 10px 20px; /* 调整图片之间和上下组件的间距 */
+  }
+
+  .product img {
+    width: 250px; /* 调整图片宽度 */
+    height: 350px; /* 调整图片高度 */
+    border-radius: 10px; /* 可选：添加圆角效果 */
+  }
+
+  .product-price {
+    background-color: #3498db; /* 设置价格框背景颜色 */
+    color: #fff; /* 设置价格文字颜色为白色 */
+    border-radius: 10px; /* 可选：添加圆角效果 */
+    padding: 5px 10px; /* 调整内边距 */
+    margin-top: 10px; /* 调整价格框和图片的间距 */
+  }
+  .add-to-cart img {
+  width: 24px; /* 调整购物车图标的大小 */
+  height: auto;
+}
+
+</style>
+</head>
+<body>
+
+<div class="navigation">
+  <!-- Navigation links would go here -->
+  <h1>CustomHer</h1>
+  <a href="collections.html" target="_blank">Collections</a>
+  <a href="product.html" target="_blank">Promotion</a>
+  <a href="blogs.html" target="_blank">Blogs</a>
+  <!-- Search box -->
+  <input type="text" placeholder="Search...">
+  <!-- Shopping cart icon -->
+  <a href="shopcart.html">
+  <img src="shopping_cart_logo.jpg" class="logo"  alt="Shopping Cart" class="logo" onclick="handleCartClick()">   
+</a>
+  <!-- About us icon -->
+  <a href="aboutus.html">
+  <img src="about_us.png" class="logo" alt="About Us" onclick="handleAboutClick()">
+</a>
+</div>
+
+<div class="product-grid">
+  <!-- Product 1 -->
+  <div class="product">
+    <img src="sw1.jpg" alt="Cozy Sweater">
+    <div class="product-price">$99</div>
+    <div class="add-to-cart">
+      <a href="shopcart.html">
+      <img src="shopping_cart_logo.jpg" alt="Add to Cart">
+    </a>
+    </div>
+    <!-- Shopping cart icon and add to cart functionality would be implemented here -->
+ 
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product">
+    <img src="sw2.jpg" alt="Product 2">
+    <div class="product-price">$200</div>
+    <div class="add-to-cart">
+      <a href="shopcart.html">
+      <img src="shopping_cart_logo.jpg" alt="Add to Cart">
+    </a>
+    </div>
+    <!-- Shopping cart icon and add to cart functionality would be implemented here -->
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product">
+    <img src="sw3.jpg" alt="Product 2">
+    <div class="product-price">$300</div>
+    <div class="add-to-cart">
+      <a href="shopcart.html">
+      <img src="shopping_cart_logo.jpg" alt="Add to Cart">
+    </a>
+    </div>
+    <!-- Shopping cart icon and add to cart functionality would be implemented here -->
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product">
+    <img src="sw4.jpg" alt="Product 2">
+    <div class="product-price">$400</div>
+    <div class="add-to-cart">
+      <a href="shopcart.html">
+      <img src="shopping_cart_logo.jpg" alt="Add to Cart">
+    </a>
+    </div>
+    <!-- Shopping cart icon and add to cart functionality would be implemented here -->
+  </div>
+
+</div>
+
+<div class="footer">
+  <a href="contact.html"  target="_blank">Contact Page</a>
+  <a href="legal.html" target="_blank">Legal Page</a>
+  <a href="aboutus.html" target="_blank">About Us</a>
+</div>
+
+</body>
+</html>
