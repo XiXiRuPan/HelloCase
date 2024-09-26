@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Store</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+  .header { background-color: #f0f0f0; padding: 10px; text-align: center; }
+  .navigation { background-color: #ff0099; padding: 10px; text-align: left}
+  .navigation a, .navigation input[type=text] { color: white; padding: 12px; margin: 4px 10px; display: inline-block; }
+    .logo {
+    width: 30px; /* 设置图标的宽度 */
+    height: 30px; /* 设置图标的高度 */
+  }
+  .product-grid { display: flex; flex-wrap: wrap; justify-content: center; padding: 10px; }
+  .product { text-align: center; margin: 10px; flex-basis: calc(50% - 20px); box-sizing: border-box; }
+  .product img { width: 100%; height: auto; }
+  .product-price { color: #333; font-size: 24px; }
+  .footer { background-color: #f0f0f0; padding: 10px; text-align: center; }
+
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .navigation a, .navigation input[type=text] { margin: 4px 0; display: block; text-align: center; }
+    .product { flex-basis: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="navigation">
+  <h1>CustomHer</h1>
+  <a href="collections.html" target="_blank">Collections</a>
+  <a href="product.html" target="_blank">Product Details</a>
+  <a href="blogs.html" target="_blank">Blogs</a>
+  <!--<input type="text" placeholder="Search...">-->
+  <a href="shopcart.html"><img src="shopping_cart_logo.jpg" alt="Shopping Cart" class="logo"></a>
+  <a href="aboutus.html"><img src="about_us.png" alt="About Us" class="logo"></a>
+</div>
+
+<div class="product-grid">
+  <div class="product">
+    <img src="sw1.jpg" alt="Cozy Sweater">
+    <div class="product-price">$99</div>
+  </div>
+  <div class="product">
+    <img src="sw2.jpg" alt="Stylish Jacket">
+    <div class="product-price">$200</div>
+  </div>
+  <div class="product">
+    <img src="sw3.jpg" alt="Elegant Dress">
+    <div class="product-price">$300</div>
+  </div>
+  <div class="product">
+    <img src="sw4.jpg" alt="Casual Shirt">
+    <div class="product-price">$400</div>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="contact.html" target="_blank">Contact Page</a>
+  <a href="legal.html" target="_blank">Legal Page</a>
+  <a href="aboutus.html" target="_blank">About Us</a>
+</div>
+
+</body>
+</html>
