@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Music Generation</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+  .header { background-color: #f0f0f0; padding: 10px; text-align: center; }
+  .navigation { background-color: #2c4b2e; padding: 10px; text-align: center; }
+  .navigation a, .navigation input[type=text] { color: white; padding: 12px; margin: 4px 10px; display: inline-block; }
+  
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap; /* 允许换行 */
+    gap: 20px; /* 在产品之间增加间距 */
+    justify-content: space-between; /* 控制对齐 */
+    padding: 10px;
+  }
+  
+  .product {
+    width: calc(25% - 40px); /* 计算每行3个产品的宽度 */
+    box-sizing: border-box; /* 确保padding和border不会影响宽度 */
+    margin-bottom: 20px; /* 给每个产品底部留出空间 */
+  }
+  
+  .product img {
+    width: 100%; /* 确保图片适应产品宽度 */
+    height: auto; /* 保持图片比例 */
+  }
+
+  .description {
+    margin-top: 10px;
+  }
+
+  .product-price {
+    color: #333;
+    font-size: 24px;
+  }
+
+  .footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .product {
+      width: 100%; /* 移动端时每行一个产品 */
+    }
+  }
+
+  h1 {
+    color: pink;
+  }
+</style>
+</head>
+  <!-- Firebase App SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    databaseURL: "YOUR_DATABASE_URL",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+</script>
+
+<body>
+
+<div class="navigation">
+  <h1>AI-Generated Music for Architectural Visualization</h1>
+</div>
+
+<div class="product-grid">
+
+  <div class="product">
+    <img src="11727951660_.pic_hd.jpg" alt="Cozy Sweater">
+    
+    <!-- GPT 描述部分 -->
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo shows a scenic view of Redondo Beach in California. The image captures a sunlit, late afternoon atmosphere. In the foreground, there's a paved walkway lined with greenery on the left, leading down toward the beach. A few people are walking up and down the path. To the right, you can see a small lifeguard station with an American flag, positioned close to the sandy beach. Further in the distance, people are relaxing on the beach, playing volleyball, or strolling along the shore. The calm ocean waves meet the sandy coastline, and in the background, there is a hillside densely covered with houses, basking in the golden sunlight. The sky is clear, contributing to the serene and inviting vibe of the scene.    </div>
+
+    <!-- Udio Music 部分 -->
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+      <!-- <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div> -->
+  </div>
+
+  <!-- Repeat the same block to create more products -->
+  <div class="product">
+    <img src="21727951670_.pic_hd.jpg" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+This photo, taken in California, features a street lined with tall palm trees that create a quintessential Southern California vibe. The trees dominate the image, with their slender trunks rising high into the clear, blue sky. On the left side of the street, you can see apartment buildings, and some parked cars along the sidewalk, while a few vehicles are driving along the road. The sunlight casts a warm glow on the tops of the palm trees and the buildings. In the background, a hillside dotted with more houses rises into view, providing a scenic backdrop. A red traffic light is visible further down the road, and on the right side of the image, a couple of people are walking along the sidewalk. The overall scene exudes a calm, sunny California atmosphere.        </p>
+    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+      <!-- <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div> -->
+  </div>
+  <div class="product">
+    <img src="31727951670_.pic_hd.jpg" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo, taken at Santa Monica, shows a serene beach scene with a person standing barefoot on the wet sand, gazing toward the iconic Santa Monica Pier. The person is positioned in the foreground, facing the ocean and the pier, with gentle waves lapping at the shore. The pier extends out into the ocean, lined with visitors enjoying the view and attractions. Several structures and colorful decorations can be seen on the pier, including a restaurant and various stalls, adding a lively atmosphere to the background. The clear blue sky and the sunlight reflecting off the water enhance the peaceful and scenic feel of the photo, capturing a perfect coastal day in Santa Monica.        </p>
+    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+        <!-- <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div> -->
+  </div>
+    <div class="product">
+    <img src="41727951675_.pic_hd.jpg" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo captures a breathtaking sunset over the ocean. The sun is positioned low on the horizon, radiating a warm, golden glow as it begins to set, casting vibrant hues of orange and yellow across the sky and the water. The calm waves gently roll towards the shore, and the wet sand reflects the colors of the setting sun, creating a beautiful mirrored effect. The peaceful scene conveys a sense of tranquility, as the light gradually fades and blends with the darkening blue sky. The entire image embodies the serene beauty of a sunset by the sea.        </p>
+    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+           <!--<div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+    <div class="product">
+    <img src="51727951676_.pic_hd.jpg" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo, taken at the Chang'an campus of Northwestern Polytechnical University in Xi'an, captures a striking architectural scene at sunset. The sky is painted with warm, glowing tones of orange and gold, casting a beautiful light on both the modern building and the monumental sculpture in the foreground. The building on the left features a sleek, curved glass facade, reflecting the last light of the day, while the large, intricately carved sculpture on the right dominates the scene with its bold and ancient-inspired design. The still water in the foreground reflects both the sculpture and the sky, enhancing the sense of tranquility and grandeur. The atmosphere feels serene yet majestic, combining modern innovation with a deep respect for tradition, as the soft colors of the sky contrast with the solid, monumental structures below.        </p>
+    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+          <!-- <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+    <div class="product">
+    <img src="61727951676_.pic_hd.jpg" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo shows a vibrant, modern building in California, which is a museum. The structure is bold and eye-catching, featuring swirling red and white lines across its facade that create a dynamic, wave-like effect. The photo is taken from inside a vehicle, capturing the view through a window as it passes by the intersection. You can see a street sign indicating Fairfax Avenue, along with some cars waiting at the traffic light and a construction zone with signs indicating lane closures. The sky is clear and blue, highlighting the bright colors and unique architectural design of the museum. The scene feels busy and urban, with the museum's futuristic exterior standing out as a visual focal point.        </p>
+    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+          <!-- <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+    <div class="product">
+    <img src="71727951676_.pic_hd.jpg" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+          
+
+This photo captures a lively street scene in Beverly Hills. The street is lined with upscale shops, and people are casually strolling along the pedestrian-friendly area. In the foreground, a streetlamp decorated with American flags and banners, including one promoting "Camp Snoopy," adds a patriotic touch to the atmosphere. The clear blue sky and bright sunlight create a pleasant, vibrant mood. You can also see a few recognizable store signs, such as Sephora, adding to the commercial vibe of the area. The scene feels lively and inviting, with the well-maintained street and polished surroundings reflecting the stylish charm of Beverly Hills.        </p>
+    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+           <!--<div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+  <!-- Add as many product divs as needed, up to 21 products for 7 rows -->
+ <div class="product">
+    <img src="81727951676_.pic_hd.jpg" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+          
+
+This photo, taken near Universal Studios in California, captures a stunning sunset with palm trees silhouetted against the golden-orange sky. The sun is low on the horizon, casting a warm glow over the landscape. In the foreground, there is a water fountain with water gently splashing upward, adding a serene touch to the scene. Behind the palm trees, the distant cityscape fades into the background, with misty mountains barely visible through the evening haze. The architecture in the lower right corner, with glass and metal structures, reflects the soft sunlight, complementing the natural beauty of the trees and the sky. The overall mood of the photo is peaceful and calming, with the sunset creating a perfect backdrop for this quiet moment.        </p>
+    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+        <!--<div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+   <div class="product">
+    <img src="91727951682_.pic_hd.jpg" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+         
+
+This photo, taken in Bangkok, Thailand, captures a dramatic sunset over the city skyline. The sky is filled with vibrant hues of orange, yellow, and pink, contrasting beautifully with the dark silhouettes of tall buildings and clouds. Large, billowing clouds dominate the horizon, adding depth and texture to the sunset scene. The city below is starting to light up as night falls, with construction cranes visible among the high-rises, symbolizing the city's growth and activity. In the distance, the "Supalai" building's sign is illuminated, standing out against the darkening sky. The overall mood of the photo is a blend of the tranquil beauty of the sunset with the bustling energy of a city transitioning from day to night.        </p>
+    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+          <!--<div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+   <div class="product">
+    <img src="101727951682_.pic_hd.jpg" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+This photo showcases a peaceful, green park setting with lush willow trees hanging over a calm pond, reflecting the serene landscape. In the background, a modern building rises above the trees, with mountains faintly visible in the distance, creating a picturesque contrast between nature and architecture. The stone bridge across the pond adds a charming element to the scene, while benches along the path suggest a relaxing environment for visitors. The overall atmosphere is tranquil and refreshing, with the greenery and natural surroundings blending harmoniously with the distant urban and mountainous backdrop.        </p>
+    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+        <!-- <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+     <div class="product">
+    <img src="131727951683_.pic.jpg" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo, taken in California, captures a relaxed, coastal street scene with a slightly overcast or foggy sky. The atmosphere feels casual and mellow, typical of a beach town. Palm trees line the street, and colorful storefronts with bright signs add vibrancy to the otherwise muted background. People are strolling along the sidewalk, some heading into shops or cafes, giving the area a lively yet laid-back feel. The street is filled with parked cars, and a few more can be seen driving down the road. The signage on the building "Zane's" adds a modern touch, while the overall setting evokes a sense of a small, close-knit community near the coast. The soft lighting from the overcast sky adds to the calm and unhurried atmosphere of the scene.    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+        <!--   <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+     <div class="product">
+    <img src="image1.png" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+Location: Churchill Island, Australia; Description: The image depicts the pastoral landscape of Churchill Island. In the foreground, there is a wide expanse of green grass, with several wooden picnic tables set up for visitors to relax. The grass is separated by a wooden fence, leading to a stretch of dry, golden-brown grassland that gradually extends towards the distant sea, which appears calm and still. In the background, faint mountains and clouds can be seen, with white clouds blending into the blue sky. Trees on both sides of the scene provide some shade.
+Atmosphere: The overall mood is peaceful and leisurely, evoking a sense of rustic tranquility. The bright sunshine makes it ideal for a walk or picnic, allowing one to appreciate the beauty and calmness of nature.    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+          <!-- <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+     <div class="product">
+    <img src="image.png" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+Location: Vienna, Austria; Description: This photo captures the beautiful sunset by a lake in Vienna. The golden sun is slowly setting, casting a dazzling streak of light across the surface of the lake. In the foreground, a rower enjoys their water sport on the calm lake, their silhouette blending with the mountains and sunset in the background, adding a sense of movement to the scene. Near the shore, boats and flags appear peaceful and serene in the soft evening sunlight. Atmosphere: The entire scene exudes a tranquil and romantic ambiance. The twilight light creates a relaxing atmosphere, marking the perfect moment at the end of the day. The sunlight, water, and mountains combine to form a calm and harmonious picture.    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+          <!--  <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+     <div class="product">
+    <img src="15.PNG" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo, taken in Vienna, exudes a charming and peaceful atmosphere. The narrow, cobblestone street is lined with quaint buildings painted in soft, warm tones, adorned with flower baskets and ivy, giving the scene a touch of old-world elegance. The bright sunlight highlights the vibrant colors of the buildings and plants, while the view leads upwards to a castle perched on a hill, with flags fluttering against a clear blue sky. The alley feels intimate and quiet, offering a sense of history and calm, as if it's a perfect spot for a leisurely stroll or to enjoy a quiet afternoon in a picturesque European setting.    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+          <!-- <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+     <div class="product">
+    <img src="16.PNG" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+This photo, taken in Turkey, captures a unique and historic atmosphere with its ancient, stone-carved buildings nestled into the rocky landscape. The structures blend seamlessly with the surrounding natural rock formations, creating a harmonious mix of architecture and nature. The bright, cloudless sky and intense sunlight highlight the warm tones of the stone, adding to the rustic and timeless feel of the place. The narrow streets and terraced buildings give the scene a sense of intimacy, as if life moves at a slower, more traditional pace here. The overall mood is one of calm and history, evoking a connection to the past in this quiet, sunlit village.    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+          <!-- <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+     <div class="product">
+    <img src="17.PNG" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo, taken at the Getty Center in California, showcases a serene and artistic atmosphere. Large banners featuring beautiful artwork, including a classic portrait of a woman in a hat and a detailed botanical illustration, hang elegantly along the modern architectural lines of the building. The sleek white columns and clean, minimalistic design of the Getty Center contrast with the colorful, detailed art, creating a sense of both contemporary sophistication and timeless creativity. The clear blue sky adds to the peaceful, sunlit ambiance, making the outdoor gallery space feel airy and inviting. The overall mood is one of calm reflection, blending art, nature, and modern architecture seamlessly.    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+          <!--  <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+     <div class="product">
+    <img src="18.PNG" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo, taken in Thailand, features the intricate and towering architecture of a temple, likely Wat Arun. The main spire rises dramatically into the cloudy sky, adorned with detailed carvings, statues, and ornate decorations. The gray clouds above create a slightly moody and contemplative atmosphere, contrasting with the elaborate and colorful details of the temple's surface. The structure's grand scale and craftsmanship exude a sense of reverence and history, while the subdued lighting adds a peaceful, almost solemn tone to the image. The overall mood is one of awe and respect, highlighting the temple's spiritual significance and architectural beauty.    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+          <!-- <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+     <div class="product">
+    <img src="19.PNG" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo, taken in Thailand, showcases a stunning traditional Thai pavilion complex with intricate green and gold roofs. The structures are ornate, with pointed gables and delicate carvings that demonstrate masterful craftsmanship. The buildings sit above a serene body of water, connected by wooden walkways, creating a harmonious blend between architecture and nature. The bright blue sky contrasts with the golden details of the pavilion, adding a sense of vibrancy and warmth to the scene. The atmosphere is peaceful and majestic, evoking a feeling of timeless beauty and cultural richness. The sunlight reflecting off the gilded rooftops enhances the opulence of the setting, while the water below adds a tranquil, reflective quality to the overall mood.    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+           <!-- <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+     <div class="product">
+    <img src="20.PNG" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo, taken in Amphoe Bang Lamung, Pattaya, captures a serene and enchanting evening by the sea. The twilight sky is painted with soft hues of blue, orange, and pink, as the last light of the day fades beyond the horizon. Along the shoreline, warm golden lights from the trees and buildings reflect on the calm water, creating a cozy and inviting glow. The lights illuminate the coastal area, adding a magical touch to the peaceful setting. The gentle ripples in the water and the quiet, distant sky create a tranquil, almost dreamy atmosphere. The overall mood is relaxed and peaceful, with a hint of romance, as the evening settles in and the area transitions into a calm, illuminated night.    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+        <!--    <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+     <div class="product">
+    <img src="21.PNG" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo, taken in Budapest-Lipotvaros, captures a scenic view of the city's iconic architecture along the banks of the Danube River. The image showcases a blend of historical and modern buildings, with the majestic towers and spires of a church standing prominently in the foreground. In the background, the grand Fisherman's Bastion and Matthias Church rise gracefully against the clear blue sky, adding a sense of grandeur and history to the scene. Boats gently float on the river, contributing to a peaceful, leisurely atmosphere. The overall mood is calm and picturesque, with a timeless beauty that reflects both the rich cultural heritage of Budapest and the serene flow of life along the river.    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+         <!--  <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+     <div class="product">
+    <img src="22.PNG" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo, taken in Chongqing, showcases the vibrant energy of the city at night. The streets are bustling with people, walking beneath the bright lights of storefronts and illuminated signs. In the background, tall modern skyscrapers, including one with glowing spires, dominate the skyline, reflecting the city’s rapid development and modernity. The lively crowd, combined with the colorful lights, creates a dynamic and lively atmosphere, evoking a sense of excitement and urban rhythm. The overall mood is one of movement, energy, and the fast-paced life of a major city at night, with a touch of neon-lit charm and modern architecture.    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+          <!--  <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div> -->
+  </div>
+     <div class="product">
+    <img src="23.PNG" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+
+This photo, taken in Chongqing, captures the vibrant and lively atmosphere of the city's famous Hongya Cave area at night. The traditional-style buildings are illuminated with golden lights, creating a dazzling and almost magical effect. The bright neon signs and glowing rooftops contrast with the modern city buildings in the background, highlighting the blend of old and new in Chongqing. The streets are bustling with people and cars, reflecting the energy of the night. The overall mood is one of excitement and festivity, with the warm lights giving the area a welcoming and lively ambiance, making it a hub of activity and a visual spectacle against the night sky.    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+      <!--   <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><be>
+            <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+  
+  
+      <div class="product">
+    <img src="121727951683_.pic_hd.jpg" alt="Cozy Sweater">
+    
+    <div class="description">
+        <span style="font-weight: bold;">GPT:</span>
+        <p>
+This photo, taken in California, captures a street corner with a classic, slightly retro feel. A sign for "Fabulous Charbroiled Burgers" stands prominently in the image, with a distinctive red and white design, indicating that the restaurant is open 24 hours. The scene is set under a clear blue sky, and the bright sunlight casts sharp shadows, enhancing the laid-back Southern California atmosphere. A red traffic light at the intersection and a street sign for Lemoli Ave are also visible, along with a few cars waiting at the light. Palm trees and modest buildings in the background add to the casual, urban setting, evoking a relaxed and everyday California vibe.        </p>
+    </div>
+
+    <div class="music-insert">
+        <p style="font-weight: bold;">Udio Music:</p>
+        <audio controls>
+            <source src="ucla1.wav" type="audio/mpeg">
+            你的浏览器不支持音频元素。
+        </audio>
+    </div>
+         <!--  <div class="feedback">
+        <p style="font-weight: bold;">Your Feedback on the Audio:</p>
+        <form>
+            <label>
+                <input type="radio" name="feedback" value="excellent"> Excellent
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="good"> Good
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="average"> Average
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="poor"> Poor
+            </label><br>
+            <label>
+                <input type="radio" name="feedback" value="not_suitable"> Not Suitable
+            </label><br><br>
+             <!--<input type="submit" value="Submit Feedback">-->
+        </form>
+    </div>-->
+  </div>
+  
+</div>
+<!-- Submit all forms -->
+<div class="footer">
+  <button onclick="submitFeedback()" style="background-color: red; color: white; font-size: 20px; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer;">
+    Submit All Feedback
+  </button>
+</div>
+ 
+  <div class="feedback-counter">
+  <h2>Current Feedback Count:</h2>
+  <p>Excellent: <span id="excellentCount">0</span></p>
+  <p>Good: <span id="goodCount">0</span></p>
+  <p>Average: <span id="averageCount">0</span></p>
+  <p>Poor: <span id="poorCount">0</span></p>
+  <p>Not Suitable: <span id="notSuitableCount">0</span></p>
+</div>
+<script>
+  // Function to fetch and display the current feedback count
+  function fetchFeedbackCount() {
+    var feedbackRef = database.ref('feedbackCounts');
+    
+    feedbackRef.on('value', (snapshot) => {
+      var data = snapshot.val() || {excellent: 0, good: 0, average: 0, poor: 0, not_suitable: 0};
+      
+      document.getElementById('excellentCount').innerText = data.excellent;
+      document.getElementById('goodCount').innerText = data.good;
+      document.getElementById('averageCount').innerText = data.average;
+      document.getElementById('poorCount').innerText = data.poor;
+      document.getElementById('notSuitableCount').innerText = data.not_suitable;
+    });
+  }
+
+  // Fetch the feedback count when the page loads
+  window.onload = fetchFeedbackCount;
+</script>
+<script>
+function submitFeedback() {
+    const forms = document.querySelectorAll('form');
+    let feedbackData = {
+        excellent: 0,
+        good: 0,
+        average: 0,
+        poor: 0,
+        not_suitable: 0
+    };
+
+    forms.forEach((form) => {
+        const formData = new FormData(form);
+        const selectedFeedback = formData.get('feedback');
+        if (selectedFeedback) {
+            feedbackData[selectedFeedback]++;
+        }
+    });
+
+    // 获取当前的反馈计数
+    var feedbackRef = database.ref('feedbackCounts');
+    feedbackRef.once('value').then((snapshot) => {
+        var currentData = snapshot.val() || {excellent: 0, good: 0, average: 0, poor: 0, not_suitable: 0};
+
+        // 更新现有计数
+        var updatedFeedback = {
+            excellent: currentData.excellent + feedbackData.excellent,
+            good: currentData.good + feedbackData.good,
+            average: currentData.average + feedbackData.average,
+            poor: currentData.poor + feedbackData.poor,
+            not_suitable: currentData.not_suitable + feedbackData.not_suitable
+        };
+
+        // 将更新后的反馈计数保存到 Firebase
+        feedbackRef.set(updatedFeedback, (error) => {
+            if (error) {
+                alert('Error submitting feedback.');
+            } else {
+                alert('Feedback submitted successfully!');
+                fetchFeedbackCount(); // 更新计数显示
+            }
+        });
+    });
+}
+</script>
+
+<!--
+<div class="footer">
+  <a href="contact.html" target="_blank">Contact Page</a>
+  <a href="legal.html" target="_blank">Legal Page</a>
+  <a href="aboutus.html" target="_blank">About Us</a>
+</div>
+-->
+</body>
+</html>
