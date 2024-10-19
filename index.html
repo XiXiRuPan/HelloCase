@@ -964,6 +964,12 @@ This photo, taken in California, captures a street corner with a classic, slight
 
 <script>
 function submitFeedback() {
+    const username = document.getElementById('username').value;
+    if (!username) {
+        alert('Please enter your name.');
+        return;
+    }
+
     const forms = document.querySelectorAll('form');
     let feedbackData = {
         excellent: 0,
@@ -977,29 +983,38 @@ function submitFeedback() {
 
     forms.forEach((form, index) => {
         const formData = new FormData(form);
-        const feedbackKey = 'feedback' + (index + 1);
-        const selectedFeedback = formData.get(feedbackKey);
+        const selectedFeedback = formData.get('feedback');
         if (selectedFeedback) {
             feedbackData[selectedFeedback]++;
             totalCount++;
         }
     });
 
-    // Calculate percentages
-    let feedbackSummary = `Feedback Summary:\n`;
-    for (let key in feedbackData) {
-        let percentage = ((feedbackData[key] / totalCount) * 100).toFixed(2);
-        feedbackSummary += `${key}: ${feedbackData[key]} (${percentage}%)\n`;
-    }
+    const feedbackSummary = {
+        username: username,
+        feedback: feedbackData,
+        total: totalCount
+    };
 
-    // Save feedback data to a text file
-    const blob = new Blob([feedbackSummary], { type: "text/plain" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "feedback_summary.txt";
-    link.click();
-
-    alert('Feedback submitted. Check your downloaded file for the summary.');
+    // Send feedback data to the server
+    fetch('/submit-feedback', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(feedbackSummary)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Feedback submitted successfully!');
+        } else {
+            alert('Error submitting feedback.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error submitting feedback.');
+    });
 }
 </script>
 <!--
