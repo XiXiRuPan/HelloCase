@@ -955,6 +955,51 @@ This photo, taken in California, captures a street corner with a classic, slight
   </div>
   
 </div>
+<!-- Submit all forms -->
+<div class="footer">
+  <button onclick="submitFeedback()">Submit All Feedback</button>
+</div>
+
+<script>
+function submitFeedback() {
+    const forms = document.querySelectorAll('form');
+    let feedbackData = {
+        excellent: 0,
+        good: 0,
+        average: 0,
+        poor: 0,
+        not_suitable: 0
+    };
+
+    let totalCount = 0;
+
+    forms.forEach((form, index) => {
+        const formData = new FormData(form);
+        const feedbackKey = 'feedback' + (index + 1);
+        const selectedFeedback = formData.get(feedbackKey);
+        if (selectedFeedback) {
+            feedbackData[selectedFeedback]++;
+            totalCount++;
+        }
+    });
+
+    // Calculate percentages
+    let feedbackSummary = `Feedback Summary:\n`;
+    for (let key in feedbackData) {
+        let percentage = ((feedbackData[key] / totalCount) * 100).toFixed(2);
+        feedbackSummary += `${key}: ${feedbackData[key]} (${percentage}%)\n`;
+    }
+
+    // Save feedback data to a text file
+    const blob = new Blob([feedbackSummary], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "feedback_summary.txt";
+    link.click();
+
+    alert('Feedback submitted. Check your downloaded file for the summary.');
+}
+</script>
 
 <div class="footer">
   <a href="contact.html" target="_blank">Contact Page</a>
