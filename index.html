@@ -56,6 +56,27 @@
   }
 </style>
 </head>
+  <!-- Firebase App SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    databaseURL: "YOUR_DATABASE_URL",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+</script>
+
 <body>
 
 <div class="navigation">
@@ -961,15 +982,36 @@ This photo, taken in California, captures a street corner with a classic, slight
     Submit All Feedback
   </button>
 </div>
+ 
+  <div class="feedback-counter">
+  <h2>Current Feedback Count:</h2>
+  <p>Excellent: <span id="excellentCount">0</span></p>
+  <p>Good: <span id="goodCount">0</span></p>
+  <p>Average: <span id="averageCount">0</span></p>
+  <p>Poor: <span id="poorCount">0</span></p>
+  <p>Not Suitable: <span id="notSuitableCount">0</span></p>
+</div>
+<script>
+  // Function to fetch and display the current feedback count
+  function fetchFeedbackCount() {
+    var feedbackRef = database.ref('feedbackCounts');
+    
+    feedbackRef.on('value', (snapshot) => {
+      var data = snapshot.val() || {excellent: 0, good: 0, average: 0, poor: 0, not_suitable: 0};
+      
+      document.getElementById('excellentCount').innerText = data.excellent;
+      document.getElementById('goodCount').innerText = data.good;
+      document.getElementById('averageCount').innerText = data.average;
+      document.getElementById('poorCount').innerText = data.poor;
+      document.getElementById('notSuitableCount').innerText = data.not_suitable;
+    });
+  }
 
+  // Fetch the feedback count when the page loads
+  window.onload = fetchFeedbackCount;
+</script>
 <script>
 function submitFeedback() {
-    const username = document.getElementById('username').value;
-    if (!username) {
-        alert('Please enter your name.');
-        return;
-    }
-
     const forms = document.querySelectorAll('form');
     let feedbackData = {
         excellent: 0,
@@ -979,44 +1021,41 @@ function submitFeedback() {
         not_suitable: 0
     };
 
-    let totalCount = 0;
-
-    forms.forEach((form, index) => {
+    forms.forEach((form) => {
         const formData = new FormData(form);
         const selectedFeedback = formData.get('feedback');
         if (selectedFeedback) {
             feedbackData[selectedFeedback]++;
-            totalCount++;
         }
     });
 
-    const feedbackSummary = {
-        username: username,
-        feedback: feedbackData,
-        total: totalCount
-    };
+    // 获取当前的反馈计数
+    var feedbackRef = database.ref('feedbackCounts');
+    feedbackRef.once('value').then((snapshot) => {
+        var currentData = snapshot.val() || {excellent: 0, good: 0, average: 0, poor: 0, not_suitable: 0};
 
-    // Send feedback data to the server
-    fetch('/submit-feedback', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(feedbackSummary)
-    })
-    .then(response => {
-        if (response.ok) {
-            alert('Feedback submitted successfully!');
-        } else {
-            alert('Error submitting feedback.');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Error submitting feedback.');
+        // 更新现有计数
+        var updatedFeedback = {
+            excellent: currentData.excellent + feedbackData.excellent,
+            good: currentData.good + feedbackData.good,
+            average: currentData.average + feedbackData.average,
+            poor: currentData.poor + feedbackData.poor,
+            not_suitable: currentData.not_suitable + feedbackData.not_suitable
+        };
+
+        // 将更新后的反馈计数保存到 Firebase
+        feedbackRef.set(updatedFeedback, (error) => {
+            if (error) {
+                alert('Error submitting feedback.');
+            } else {
+                alert('Feedback submitted successfully!');
+                fetchFeedbackCount(); // 更新计数显示
+            }
+        });
     });
 }
 </script>
+
 <!--
 <div class="footer">
   <a href="contact.html" target="_blank">Contact Page</a>
